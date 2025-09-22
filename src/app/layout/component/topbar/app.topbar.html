@@ -7,16 +7,10 @@
             <img class="icon__6e9f8" alt="Logo H77" width="40" height="40" aria-hidden="true" src="img/logo.png" />
             <span>Server: H-77</span>
         </a>
-        <p-badge class="ml-4" [value]="currentServerStatus().name" [severity]="currentServerStatus().severity" />
+        <p-tag class="ml-4" [value]="currentServerStatus().name" [severity]="currentServerStatus().severity" />
     </div>
     <div class="layout-topbar-actions">
         <div class="layout-config-menu">
-            <p-button icon="pi pi-power-off"
-                [rounded]="true"
-                [text]="true"
-                (click)="toggleStatus()"
-                [disabled]="loadingServerStatus()"
-            />
             <p-button [icon]="layoutService.isDarkTheme() ? 'pi pi-sun' : 'pi pi-moon'"
                 [rounded]="true"
                 [text]="true"

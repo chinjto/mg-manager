@@ -1,0 +1,9 @@
+
+<div class="col-span-12 grid grid-cols-12 gap-8">
+    @for (server of servers(); track server.id) {
+        <app-server-card [server]="server" class="col-span-12 lg:col-span-6 xl:col-span-3" />
+    }
+    @for (_ of empties(); track $index) {
+        <app-server-card class="col-span-12 lg:col-span-6 xl:col-span-3" />
+    }
+</div>

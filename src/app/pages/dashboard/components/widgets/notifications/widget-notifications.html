@@ -1,0 +1,15 @@
+<div class="card">
+    @for (period of notifications(); track $index) {
+        <span class="block text-muted-color font-medium mb-4">{{period.name}}</span>
+        <ul class="p-0 mx-0 mt-0 mb-6 list-none">
+            @for (notification of period.notifications; track $index) {
+                <li class="flex items-center py-2" [class.border-b]="!$last" [class.border-surface]="!$last">
+                    <icon-rounded [color]="notification.color" [pi]="notification.icon" />
+                    <span class="text-surface-900 dark:text-surface-0 leading-normal">
+                        {{notification.author}} {{notification.action}} <span class="text-primary font-bold">{{notification.target}}</span> at {{notification.time}}.
+                    </span>
+                </li>
+            }
+        </ul>
+    }
+</div>
