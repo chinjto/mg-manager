@@ -1,4 +1,7 @@
 describe('Starting test', () => {
+  before(() => {
+    cy.task('clearScreenshots');
+  });
   it('Visits the web app', () => {
     cy.visit('/')
     cy.get('.layout-topbar').invoke('css', 'position', 'absolute')
